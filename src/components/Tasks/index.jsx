@@ -1,7 +1,7 @@
 import { Task } from '../Task';
 import styles from './tasks.module.css';
 
-export function Tasks({ tasks, onComplete, onDelete, onEdit, onDeleteAll, onCompleteAll }) {
+export function Tasks({ tasks, onComplete, onDelete, onEdit, onDeleteAll, onCompleteAll, onMarkAllUndone }) {
     const tasksQuantity = tasks.length;
     const completedTasks = tasks.filter(task => task.isCompleted).length;
 
@@ -31,8 +31,11 @@ export function Tasks({ tasks, onComplete, onDelete, onEdit, onDeleteAll, onComp
                 ))}
             </div>
 
-            <button className={styles.deleteAllButton} onClick={onDeleteAll}>Delete All Tasks</button> {/* Button to delete all tasks */}
-            <button className={styles.completeAllButton} onClick={onCompleteAll}>Complete All Tasks</button> {/* Button to complete all tasks */}
+            <div className={styles.buttons}>
+                <button className={styles.deleteAllButton} onClick={onDeleteAll}>Delete all tasks</button>
+                <button className={styles.completeAllButton} onClick={onCompleteAll}>Complete all tasks</button>
+                <button className={styles.markAllUndoneButton} onClick={onMarkAllUndone}>Mark all undone</button>
+            </div>
         </section>
     )
 }

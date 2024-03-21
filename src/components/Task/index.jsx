@@ -6,24 +6,33 @@ import { BsTrash, BsCheckCircleFill} from 'react-icons/bs';
 export function Task({ task, onComplete, onDelete, onEdit }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editedTitle, setEditedTitle] = useState(task.title);
-    const [originalTitle, setOriginalTitle] = useState(task.title);
 
     const handleEdit = () => {
         setIsEditing(true);
     };
 
     const handleSave = () => {
-        onEdit(task.id, editedTitle);
+        if (editedTitle.trim() === '') {
+            alert('Task cannot be empty. Please input task first.');
+        } else if (editedTitle !== task.title) { // Check if there are changes
+            onEdit(task.id, editedTitle);
+        }
         setIsEditing(false);
     };
-
+    
     const handleCancel = () => {
-        setEditedTitle(originalTitle);
+        setEditedTitle(task.title);
         setIsEditing(false);
     };
 
     const handleTitleChange = (e) => {
         setEditedTitle(e.target.value);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSave();
+        }
     };
 
     return (
@@ -39,6 +48,7 @@ export function Task({ task, onComplete, onDelete, onEdit }) {
                         className={styles.editInput}
                         value={editedTitle}
                         onChange={handleTitleChange}
+                        onKeyDown={handleKeyDown}
                         autoFocus
                     />
                     <button className={styles.saveButton} onClick={handleSave}>Save</button>

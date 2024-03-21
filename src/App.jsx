@@ -91,6 +91,14 @@ function App() {
         saveTasks(updatedTasks);
     }
 
+    function markAllUndone() {
+        const newTasks = tasks.map(task => ({
+            ...task,
+            isCompleted: false
+        }));
+        saveTasks(newTasks);
+    }
+
     return (
         <div>
             <Header onAddTask={addTask} />
@@ -99,8 +107,9 @@ function App() {
                 onDelete={deleteTaskById}
                 onDeleteAll={deleteAllTasks}
                 onComplete={taskCompleted}
-                onCompleteAll={completeAllTasks} // Pass the completeAllTasks function
-                onEdit={handleTaskEdit} 
+                onCompleteAll={completeAllTasks}
+                onEdit={handleTaskEdit}
+                onMarkAllUndone={markAllUndone} 
             />
         </div>
     )

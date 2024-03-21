@@ -1,9 +1,9 @@
 .task {
     width: 100%;
-    background: #262626;
-    border: 1px solid #333333;
+    background: #f2f2f2;
+    border: 2px solid #606060;
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,7 @@
   .task p {
     font-size: 14px;
     line-height: 19px;
-    color: #F2F2F2;
+    color: #a020b9;
     margin-right: auto;
   }
   
@@ -57,11 +57,38 @@
   .deleteButton {
     background: none;
     border: none;
-    color: #808080;
+    color: #606060;
   }
 
   .editButton {
     background: none;
     border: none;
-    color: #808080;
+    color: #606060;
+  }
+
+  .editInput {
+    width: 100%;
+    height: 30px; 
+    border-radius: 8px;
+    margin-bottom: 5px; 
+    margin-right: 10px;
+    text-align: left; 
+  }
+
+  .saveButton {
+    margin-right: 10px; 
+    padding: 5px 12px; 
+    border-radius: 8px;
+    font-size: 12.5px; 
+    background-color: purple;
+    color: #f2f2f2; 
+  }
+
+  .cancelButton {
+      margin-right: 10px; 
+      padding: 5px 12px; 
+      border-radius: 8px;
+      font-size: 12.5px; 
+      background-color: #606060; 
+      color: #f2f2f2; 
   }

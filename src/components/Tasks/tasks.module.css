@@ -46,30 +46,48 @@
 
   .deleteAllButton {
     padding: 10px 20px; 
-    font-size: 16px; 
-    background-color: red;
+    font-size: 14px; 
+    background-color: #F4512C;
     color: white; 
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
-    margin-top: 20px; 
+    margin-top: 20px;
+    margin-right: 10px; 
+}
+
+  .completeAllButton {
+      padding: 10px 20px; 
+      font-size: 14px; 
+      background-color: #a45fcf; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin-top: 20px; 
   }
 
   .deleteAllButton:hover {
-    background-color: darkred; 
-  }
-
-  .completeAllButton {
-    padding: 10px 20px; 
-    font-size: 16px; 
-    background-color: #5E1B89; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    margin-top: 20px; 
+      background-color: #8b301b; 
   }
 
   .completeAllButton:hover {
-    background-color: #4C1366; 
+      background-color: #4C1366; 
   }
+
+  .markAllUndoneButton {
+      padding: 10px 20px; 
+      font-size: 14px; 
+      background-color: #5E1B89; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin-top: 20px;
+      margin-left: 10px; 
+  }
+
+  .markAllUndoneButton:hover {
+      background-color: #4C1366; 
+  }
+  
